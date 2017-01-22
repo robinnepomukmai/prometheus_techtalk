@@ -1,0 +1,62 @@
+=============== Jan 22, 2017 (CET) ===============
+13:39:32.927400 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:39:32.927744 db@open opening
+13:39:32.927969 version@stat F·[] S·0B[] Sc·[]
+13:39:32.928088 db@janitor F·2 G·0
+13:39:32.928100 db@open done T·350.385µs
+13:39:34.880146 db@close closing
+13:39:34.880217 db@close done T·67.874µs
+=============== Jan 22, 2017 (CET) ===============
+13:41:15.877855 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:41:15.877967 version@stat F·[] S·0B[] Sc·[]
+13:41:15.877978 db@open opening
+13:41:15.878026 journal@recovery F·1
+13:41:15.878144 journal@recovery recovering @1
+13:41:15.878517 memdb@flush created L0@2 N·21 S·4KiB "\x06job,v20":"\x14sc..job,v10"
+13:41:15.878782 version@stat F·[1] S·4KiB[4KiB] Sc·[0.25]
+13:41:15.879515 db@janitor F·3 G·0
+13:41:15.879532 db@open done T·1.549079ms
+13:41:39.740500 db@close closing
+13:41:39.740582 db@close done T·80.887µs
+=============== Jan 22, 2017 (CET) ===============
+13:41:54.067475 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:41:54.067574 version@stat F·[1] S·4KiB[4KiB] Sc·[0.25]
+13:41:54.067582 db@open opening
+13:41:54.067615 journal@recovery F·1
+13:41:54.067714 journal@recovery recovering @3
+13:41:54.071294 memdb@flush created L0@5 N·25 S·9KiB "\x06job,v46":"\x14sc..job,v32"
+13:41:54.072107 version@stat F·[2] S·13KiB[13KiB] Sc·[0.50]
+13:41:54.072813 db@janitor F·4 G·0
+13:41:54.072833 db@open done T·5.246115ms
+13:55:35.002732 db@close closing
+13:55:35.002774 db@close done T·41.091µs
+=============== Jan 22, 2017 (CET) ===============
+13:58:10.168605 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:58:10.179366 version@stat F·[2] S·13KiB[13KiB] Sc·[0.50]
+13:58:10.179397 db@open opening
+13:58:10.179488 journal@recovery F·1
+13:58:10.179627 journal@recovery recovering @6
+13:58:10.181130 memdb@flush created L0@8 N·43 S·13KiB "\x06job,v89":"\x10in..nce,v50"
+13:58:10.181407 version@stat F·[3] S·26KiB[26KiB] Sc·[0.75]
+13:58:10.183107 db@janitor F·5 G·0
+13:58:10.183127 db@open done T·3.724ms
+14:02:34.530567 db@close closing
+14:02:34.530613 db@close done T·45.905µs
+=============== Jan 22, 2017 (CET) ===============
+14:03:14.036853 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:03:14.036983 version@stat F·[3] S·26KiB[26KiB] Sc·[0.75]
+14:03:14.036998 db@open opening
+14:03:14.037063 journal@recovery F·1
+14:03:14.037187 journal@recovery recovering @9
+14:03:14.040268 memdb@flush created L0@11 N·14 S·5KiB "\x06job,v106":"\x10in..nce,v94"
+14:03:14.040625 version@stat F·[4] S·32KiB[32KiB] Sc·[1.00]
+14:03:14.042118 db@janitor F·6 G·0
+14:03:14.042131 db@open done T·5.128563ms
+14:03:14.046340 table@compaction L0·4 -> L1·0 S·32KiB Q·107
+14:03:14.071613 table@build created L1@14 N·21 S·2KiB "\x06job,v106":"\x14sc..job,v32"
+14:03:14.071662 version@stat F·[0 1] S·2KiB[0B 2KiB] Sc·[0.00 0.00]
+14:03:14.071788 table@compaction committed F-3 S-29KiB Ke·0 D·82 T·25.40926ms
+14:03:14.071935 table@remove removed @11
+14:03:14.072021 table@remove removed @8
+14:03:14.072097 table@remove removed @5
+14:03:14.072186 table@remove removed @2

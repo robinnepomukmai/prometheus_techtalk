@@ -1,0 +1,153 @@
+Prometheus
+Service Monitoring @ Rewe Digital 
+15:04 26 Jan 2016
+Tags: Prometheus, Grafana, 
+
+Robin Nepomuk Mai
+robin.mai@rewe-digital.com
+@nepooomuk
+https://github.com/Nepooomuk/prometheus_techtalk
+
+* Agenda
+- Some thoughts on Monitoring
+.image pictures/monitoring.gif
+
+* Agenda
+- Classic Monitoring
+- Prometheus overview
+
+* Agenda
+- Classic Monitoring
+- Prometheus overview
+- How to implement Prometheus
+
+* Agenda
+- Classic Monitoring
+- Prometheus overview
+- How to implement Prometheus
+- Live demo
+
+* Whats wrong with "Classic" monitoring systems?
+- Shell scripts with success/fail
+
+    #!/bin/bash
+    trigger=4.00
+    load=`cat /proc/loadavg | awk '{print $1}'`
+    response=`echo | awk -v T=$trigger -v L=$load 'BEGIN{if ( L > T){ print "greater"}}'`
+    if [[ $response = "greater" ]]
+    then
+    sar -q | mail -s"High load on server - [ $load ]" recipient@example.com
+    fi
+- Failure causes alerts
+- Machine centric
+- aaaaand...
+
+* Nagios, Icinga, Zabbix => Blackboxmonitoring
+- Monitoring from the "outside" without knowledge of how your applications works internally.
+.image pictures/blackbox-monitoring.gif
+
+
+
+* Whats wrong with this?
+.image pictures/disturbing.jpg
+
+* What do you need to know about your service?
+The four golden signals of monitoring are:
+
+Latency
+
+
+    - The time it takes to service a request.
+
+
+
+Traffic
+
+
+    - A measure of how much demand is being placed on your system.
+
+
+Errors
+
+
+    - The rate of requests that fail explicitly and implicitly.
+
+
+Saturation
+
+
+    - Measurement of the available ressources.
+.link https://books.google.de/books?id=_4rPCwAAQBAJ&pg=PA60&lpg=PA60&dq=four+golden+signals&source=bl&ots=pykFazLQUn&sig=q4VKDwsmyTTDZXatsxIWoVKEWUM&hl=de&sa=X&ved=0ahUKEwi0kuDttbDOAhUM7hoKHTkDAjYQ6AEISjAN#v=onepage&q=four%20golden%20signals&f=false "4 golden signals of monitoring"
+
+
+* Who is Prometheus?
+    "Prometheus (blah blah blah, meaning "forethought")[1] is a Titan in 
+    Greek mythology, best known as the deity in Greek mythology who was the creator of mankind and its greatest benefactor, 
+    who stole fire from Mount Olympus and gave it to mankind."
+.image pictures/prometheus.jpg 400 _
+
+* What is Prometheus?
+.image pictures/prometheus1.png _ 50
+- Monitoring system
+- Pull based
+- Comparable to Googles Borgmon
+- Built by ex-Googlers @Soundcloud
+- Written in Go
+.image pictures/gopher.png 200 200
+
+* What does Prometheus offer?
+- Timeseries database
+- Scalable by nature
+- High resoloution metrics collection
+- Powerfull easy to learn query language
+- Super cool data source for Grafana
+- Alerting
+.link https://prometheus.io prometheus.io
+
+* Prometheus architecture
+.image pictures/Prometheus.svg.xml.svg
+
+* Support languages
+Official:
+
+
+.link https://github.com/prometheus/client_golang Golang
+.link https://github.com/prometheus/client_java Java / Scala
+.link https://github.com/prometheus/client_python   Python
+    Ruby
+
+Unofficial:
+
+
+.link https://github.com/siimon/prom-client Node.js 
+    Bash
+    C
+    Elixir
+    Haskell
+    C#
+    Rust
+
+* Attention! Golang ahead!
+.image pictures/go.gif
+
+* Go weatherservice
+.code weatherdemo.go
+.link http://localhost:8080/weather /weather
+
+* Prometheus implementation
+.code weatherdemo-prom.go
+.link http://localhost:8080/metrics /metrics
+
+* Four golden signals: Latency
+.code weatherdemo-prom-response-time.go
+.link http://localhost:8080/weather /weather
+.link http://localhost:8080/metrics /metrics
+
+* How to collect metrics with Prometheus?
+.image pictures/promconf.png 500 _
+.link http://localhost:9090/config prometheus-config
+
+* Live demo - What could possibly go wrong?
+.image pictures/good-luck.gif
+
+.link http://localhost:3000 Grafana
